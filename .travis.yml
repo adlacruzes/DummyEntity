@@ -14,7 +14,7 @@ php:
 before_script:
   - composer self-update
   - composer clear-cache
-  - composer install --no-interaction --dev
+  - composer install --no-interaction
 
 script:
   - php vendor/phpunit/phpunit/phpunit --configuration phpunit.xml
