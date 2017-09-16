@@ -107,4 +107,40 @@ class Test extends TestCase
             $entity->getOptional()
         );
     }
+
+    public function test_createArray_ShouldReturnArray()
+    {
+        $entities = ATestFactory::createArray();
+
+        $this->assertInternalType(
+            'array',
+            $entities
+        );
+
+        $this->assertContainsOnlyInstancesOf(
+            A::class,
+            $entities
+        );
+    }
+
+    public function test_createArray_ShouldReturnArrayOfNElements()
+    {
+        $n = 9;
+        $entities = ATestFactory::createArray($n);
+
+        $this->assertCount(
+            $n,
+            $entities
+        );
+    }
+
+    public function test_createArray_ShouldReturnArrayOf1Element()
+    {
+        $entities = ATestFactory::createArray();
+
+        $this->assertCount(
+            1,
+            $entities
+        );
+    }
 }
