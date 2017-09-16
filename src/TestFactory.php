@@ -7,6 +7,17 @@ use ReflectionClass;
 
 abstract class TestFactory
 {
+    abstract public static function create(array $values = null);
+
+    public static function createArray(int $n = 1)
+    {
+        $array = [];
+        for ($i = $n; $i > 0; $i--) {
+            $array[] = (new static())::create();
+        }
+        return $array;
+    }
+
     protected static function createFromClass($class, $parameters, array $parametersToOverride = null)
     {
         if ($parametersToOverride !== null) {
