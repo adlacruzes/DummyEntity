@@ -20,6 +20,8 @@ abstract class TestFactory
 
     protected static function createFromClass($class, $parameters, array $parametersToOverride = null)
     {
+        self::checkFactoryParameters($class, $parameters);
+
         if ($parametersToOverride !== null) {
             $parameters = self::overrideParameters(
                 self::getParametersFromConstructor($class),
@@ -55,5 +57,14 @@ abstract class TestFactory
             $parameters[$index] = $value;
         }
         return $parameters;
+    }
+
+    private static function checkFactoryParameters($class, $parameters)
+    {
+        $parametersFromConstructor = self::getParametersFromConstructor($class);
+
+        if (count($parametersFromConstructor) !== count($parameters)) {
+            throw new InvalidArgumentException('Parameters mismatch');
+        }
     }
 }

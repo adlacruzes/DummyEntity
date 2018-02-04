@@ -6,6 +6,7 @@ use DateTime;
 use DummyEntity\Test\Entities\A;
 use DummyEntity\Test\Factories\ATestFactory;
 use DummyEntity\Test\Factories\BTestFactory;
+use DummyEntity\Test\Factories\CTestFactory;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
@@ -142,5 +143,13 @@ class Test extends TestCase
             1,
             $entities
         );
+    }
+
+    public function test_parametersMismatch_ShouldThrowException()
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Parameters mismatch');
+
+        CTestFactory::create();
     }
 }
