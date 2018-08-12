@@ -18,6 +18,7 @@ before_script:
 
 script:
   - php vendor/phpunit/phpunit/phpunit --configuration phpunit.xml
+  - vendor/bin/phpcs src test
 
 notifications:
     email: false

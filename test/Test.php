@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 
 class Test extends TestCase
 {
-    public function test_givenNoValues_ShouldReturnEntity()
+    public function testGivenNoValuesShouldReturnEntity()
     {
         $entity = ATestFactory::create();
 
@@ -22,7 +22,7 @@ class Test extends TestCase
         );
     }
 
-    public function test_givenValidValue_ShouldReturnValue()
+    public function testGivenValidValueShouldReturnValue()
     {
         $name = 'New name';
 
@@ -38,7 +38,7 @@ class Test extends TestCase
         );
     }
 
-    public function test_givenAllValidValues_ShouldReturnEntity()
+    public function testGivenAllValidValuesShouldReturnEntity()
     {
         $id = 1;
         $name = 'New name';
@@ -67,7 +67,7 @@ class Test extends TestCase
         );
     }
 
-    public function test_givenInValidValue_ShouldThrowException()
+    public function testGivenInValidValueShouldThrowException()
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -76,10 +76,9 @@ class Test extends TestCase
                 'invalid' => 'argument'
             ]
         );
-
     }
 
-    public function test_givenValidTypeValue_ShouldReturnEntity()
+    public function testGivenValidTypeValueShouldReturnEntity()
     {
         $datetime = new DateTime();
         $entity = BTestFactory::create(
@@ -94,7 +93,7 @@ class Test extends TestCase
         );
     }
 
-    public function test_givenValidNullValue_ShouldReturnEntity()
+    public function testGivenValidNullValueShouldReturnEntity()
     {
         $optional = null;
         $entity = BTestFactory::create(
@@ -109,7 +108,7 @@ class Test extends TestCase
         );
     }
 
-    public function test_createArray_ShouldReturnArray()
+    public function testCreateArrayShouldReturnArray()
     {
         $entities = ATestFactory::createArray();
 
@@ -124,7 +123,7 @@ class Test extends TestCase
         );
     }
 
-    public function test_createArray_ShouldReturnArrayOfNElements()
+    public function testCreateArrayShouldReturnArrayOfNElements()
     {
         $n = 9;
         $entities = ATestFactory::createArray($n);
@@ -135,7 +134,7 @@ class Test extends TestCase
         );
     }
 
-    public function test_createArray_ShouldReturnArrayOf1Element()
+    public function testCreateArrayShouldReturnArrayOf1Element()
     {
         $entities = ATestFactory::createArray();
 
@@ -145,7 +144,7 @@ class Test extends TestCase
         );
     }
 
-    public function test_parametersMismatch_ShouldThrowException()
+    public function testParametersMismatchShouldThrowException()
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Parameters mismatch');
