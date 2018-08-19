@@ -9,6 +9,8 @@ php:
   - 7.1snapshot
   - 7.2
   - 7.2snapshot
+  - 7.3
+  - 7.3snapshot
   - master
 
 before_script:
@@ -19,7 +21,7 @@ before_script:
 script:
   - vendor/bin/phpcs src test
   - vendor/bin/phpstan analyse --no-progress --level=max src test
-  - php vendor/phpunit/phpunit/phpunit --configuration phpunit.xml
+  - vendor/bin/phpunit
 
 notifications:
     email: false
