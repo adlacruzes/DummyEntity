@@ -17,8 +17,9 @@ before_script:
   - composer install --no-interaction
 
 script:
-  - php vendor/phpunit/phpunit/phpunit --configuration phpunit.xml
   - vendor/bin/phpcs src test
+  - vendor/bin/phpstan analyse --no-progress --level=max src test
+  - vendor/bin/phpunit
 
 notifications:
     email: false
