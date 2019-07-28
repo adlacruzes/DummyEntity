@@ -1,15 +1,15 @@
 language: php
 
-sudo: false
-
 php:
   - 7.0
-  - 7.0snapshot
   - 7.1
-  - 7.1snapshot
   - 7.2
-  - 7.2snapshot
-  - master
+  - 7.3
+  - 7.4snapshot
+
+matrix:
+  allow_failures:
+    - php: 7.4snapshot
 
 before_script:
   - composer self-update
@@ -17,9 +17,7 @@ before_script:
   - composer install --no-interaction
 
 script:
-  - vendor/bin/phpcs src test
-  - vendor/bin/phpstan analyse --no-progress --level=max src test
-  - vendor/bin/phpunit
+  - composer ci
 
 notifications:
-    email: false
+  email: false
