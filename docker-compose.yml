@@ -1,0 +1,18 @@
+version: '3.5'
+
+services:
+
+  app:
+
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+
+    image: php-dummy-entity
+
+    stdin_open: true
+
+    volumes:
+      - .:/app
+
+    working_dir: /app
