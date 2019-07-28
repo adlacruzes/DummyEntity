@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DummyEntity;
 
 use InvalidArgumentException;
@@ -12,9 +14,10 @@ abstract class TestFactory
     public static function createArray(int $n = 1)
     {
         $array = [];
-        for ($i = $n; $i > 0; $i--) {
+        for ($i = $n; $i > 0; --$i) {
             $array[] = (new static())::create();
         }
+
         return $array;
     }
 
@@ -22,13 +25,14 @@ abstract class TestFactory
     {
         self::checkFactoryParameters($class, $parameters);
 
-        if ($parametersToOverride !== null) {
+        if (null !== $parametersToOverride) {
             $parameters = self::overrideParameters(
                 self::getParametersFromConstructor($class),
                 $parameters,
                 $parametersToOverride
             );
         }
+
         return self::createNewClass($class, $parameters);
     }
 
@@ -44,6 +48,7 @@ abstract class TestFactory
         foreach ($reflection->getConstructor()->getParameters() as $param) {
             $params[] = $param->getName();
         }
+
         return $params;
     }
 
@@ -51,11 +56,12 @@ abstract class TestFactory
     {
         foreach ($parametersToOverride as $name => $value) {
             $index = array_search($name, $parametersFromConstructor, true);
-            if ($index === false) {
+            if (false === $index) {
                 throw new InvalidArgumentException('Argument ' . $name . ' is not valid');
             }
             $parameters[$index] = $value;
         }
+
         return $parameters;
     }
 

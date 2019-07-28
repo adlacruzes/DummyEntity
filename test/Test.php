@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DummyEntity\Test;
 
 use DateTime;
@@ -28,7 +30,7 @@ class Test extends TestCase
 
         $entity = ATestFactory::create(
             [
-                'name' => $name
+                'name' => $name,
             ]
         );
 
@@ -57,7 +59,7 @@ class Test extends TestCase
                 'id' => $id,
                 'name' => $name,
                 'isEnabled' => $isEnabled,
-                'createdAt' => $createdAt
+                'createdAt' => $createdAt,
             ]
         );
 
@@ -73,7 +75,7 @@ class Test extends TestCase
 
         ATestFactory::create(
             [
-                'invalid' => 'argument'
+                'invalid' => 'argument',
             ]
         );
     }
@@ -83,7 +85,7 @@ class Test extends TestCase
         $datetime = new DateTime();
         $entity = BTestFactory::create(
             [
-                'createdAt' => $datetime
+                'createdAt' => $datetime,
             ]
         );
 
@@ -98,7 +100,7 @@ class Test extends TestCase
         $optional = null;
         $entity = BTestFactory::create(
             [
-                'optional' => $optional
+                'optional' => $optional,
             ]
         );
 

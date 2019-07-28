@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DummyEntity\Test\Entities;
 
 use DateTime;
@@ -12,12 +14,12 @@ class A
     private $id;
 
     /**
-     * @var String
+     * @var string
      */
     private $name;
 
     /**
-     * @var boolean
+     * @var bool
      */
     private $isEnabled;
 
@@ -29,7 +31,7 @@ class A
     /**
      * A constructor.
      * @param int $id
-     * @param String $name
+     * @param string $name
      * @param bool $isEnabled
      * @param DateTime $createdAt
      */
@@ -50,9 +52,9 @@ class A
     }
 
     /**
-     * @return String
+     * @return string
      */
-    public function getName(): String
+    public function getName(): string
     {
         return $this->name;
     }

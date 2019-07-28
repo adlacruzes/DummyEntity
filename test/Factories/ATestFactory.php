@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DummyEntity\Test\Factories;
 
 use DummyEntity\Test\Entities\A;
@@ -17,7 +19,7 @@ class ATestFactory extends TestFactory
             $faker->randomNumber(),
             $faker->name,
             $faker->boolean,
-            $faker->dateTime
+            $faker->dateTime,
         ];
 
         return parent::createFromClass($class, $constructor, $values);

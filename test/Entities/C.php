@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DummyEntity\Test\Entities;
 
 use DateTime;
@@ -12,7 +14,7 @@ class C
     private $id;
 
     /**
-     * @var String | null
+     * @var string | null
      */
     private $optional;
 
@@ -24,7 +26,7 @@ class C
     /**
      * B constructor.
      * @param int $id
-     * @param null|String $optional
+     * @param string|null $optional
      * @param DateTime $createdAt
      */
     public function __construct($id, $optional, DateTime $createdAt = null)
@@ -43,7 +45,7 @@ class C
     }
 
     /**
-     * @return null|String
+     * @return string|null
      */
     public function getOptional()
     {
@@ -51,7 +53,7 @@ class C
     }
 
     /**
-     * @return null|DateTime
+     * @return DateTime|null
      */
     public function getCreatedAt()
     {

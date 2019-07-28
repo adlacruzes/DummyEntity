@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DummyEntity\Test\Factories;
 
 use DummyEntity\Test\Entities\C;
@@ -15,7 +17,7 @@ class CTestFactory extends TestFactory
         $faker = Factory::create();
         $constructor = [
             $faker->randomNumber(),
-            $faker->optional()->name
+            $faker->optional()->name,
         ];
 
         return parent::createFromClass($class, $constructor, $values);
