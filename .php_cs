@@ -19,7 +19,8 @@ return PhpCsFixer\Config::create()
         'random_api_migration' => true,
         'list_syntax' => ['syntax' => 'short'],
         'is_null' => true,
-        'declare_strict_types' => true
+        'declare_strict_types' => true,
+        'no_superfluous_phpdoc_tags' => false
     ])
     ->setFinder(
         PhpCsFixer\Finder::create()
