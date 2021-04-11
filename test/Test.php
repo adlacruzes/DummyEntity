@@ -10,6 +10,7 @@ use DummyEntity\Test\Factories\ATestFactory;
 use DummyEntity\Test\Factories\BTestFactory;
 use DummyEntity\Test\Factories\CTestFactory;
 use InvalidArgumentException;
+use PHPUnit\Framework\Exception;
 use PHPUnit\Framework\TestCase;
 
 class Test extends TestCase
@@ -114,10 +115,9 @@ class Test extends TestCase
     {
         $entities = ATestFactory::createArray();
 
-        $this->assertInternalType(
-            'array',
-            $entities
-        );
+        if (false === is_array($entities)) {
+            throw new Exception('Failed asserting that entities is of type "array"');
+        }
 
         $this->assertContainsOnlyInstancesOf(
             A::class,
