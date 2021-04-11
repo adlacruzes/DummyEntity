@@ -1,0 +1,172 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Cannot call method getParameters\\(\\) on ReflectionMethod\\|null\\.$#"
+			count: 1
+			path: src/TestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\TestFactory\\:\\:checkFactoryParameters\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/TestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\TestFactory\\:\\:checkFactoryParameters\\(\\) has parameter \\$class with no typehint specified\\.$#"
+			count: 1
+			path: src/TestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\TestFactory\\:\\:checkFactoryParameters\\(\\) has parameter \\$parameters with no typehint specified\\.$#"
+			count: 1
+			path: src/TestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\TestFactory\\:\\:create\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/TestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\TestFactory\\:\\:create\\(\\) has parameter \\$values with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/TestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\TestFactory\\:\\:createArray\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/TestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\TestFactory\\:\\:createFromClass\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/TestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\TestFactory\\:\\:createFromClass\\(\\) has parameter \\$class with no typehint specified\\.$#"
+			count: 1
+			path: src/TestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\TestFactory\\:\\:createFromClass\\(\\) has parameter \\$parameters with no typehint specified\\.$#"
+			count: 1
+			path: src/TestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\TestFactory\\:\\:createFromClass\\(\\) has parameter \\$parametersToOverride with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/TestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\TestFactory\\:\\:createNewClass\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/TestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\TestFactory\\:\\:createNewClass\\(\\) has parameter \\$class with no typehint specified\\.$#"
+			count: 1
+			path: src/TestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\TestFactory\\:\\:createNewClass\\(\\) has parameter \\$parameters with no typehint specified\\.$#"
+			count: 1
+			path: src/TestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\TestFactory\\:\\:getParametersFromConstructor\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/TestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\TestFactory\\:\\:getParametersFromConstructor\\(\\) has parameter \\$class with no typehint specified\\.$#"
+			count: 1
+			path: src/TestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\TestFactory\\:\\:overrideParameters\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/TestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\TestFactory\\:\\:overrideParameters\\(\\) has parameter \\$parameters with no typehint specified\\.$#"
+			count: 1
+			path: src/TestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\TestFactory\\:\\:overrideParameters\\(\\) has parameter \\$parametersFromConstructor with no typehint specified\\.$#"
+			count: 1
+			path: src/TestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\TestFactory\\:\\:overrideParameters\\(\\) has parameter \\$parametersToOverride with no typehint specified\\.$#"
+			count: 1
+			path: src/TestFactory.php
+
+		-
+			message: "#^Unsafe usage of new static\\(\\)\\.$#"
+			count: 1
+			path: src/TestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\Test\\\\Factories\\\\ATestFactory\\:\\:create\\(\\) has parameter \\$values with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: test/Factories/ATestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\Test\\\\Factories\\\\BTestFactory\\:\\:create\\(\\) has parameter \\$values with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: test/Factories/BTestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\Test\\\\Factories\\\\CTestFactory\\:\\:create\\(\\) has parameter \\$values with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: test/Factories/CTestFactory.php
+
+		-
+			message: "#^Method DummyEntity\\\\Test\\\\Test\\:\\:testCreateArrayShouldReturnArray\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: test/Test.php
+
+		-
+			message: "#^Method DummyEntity\\\\Test\\\\Test\\:\\:testCreateArrayShouldReturnArrayOf1Element\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: test/Test.php
+
+		-
+			message: "#^Method DummyEntity\\\\Test\\\\Test\\:\\:testCreateArrayShouldReturnArrayOfNElements\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: test/Test.php
+
+		-
+			message: "#^Method DummyEntity\\\\Test\\\\Test\\:\\:testGivenAllValidValuesShouldReturnEntity\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: test/Test.php
+
+		-
+			message: "#^Method DummyEntity\\\\Test\\\\Test\\:\\:testGivenInValidValueShouldThrowException\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: test/Test.php
+
+		-
+			message: "#^Method DummyEntity\\\\Test\\\\Test\\:\\:testGivenNoValuesShouldReturnEntity\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: test/Test.php
+
+		-
+			message: "#^Method DummyEntity\\\\Test\\\\Test\\:\\:testGivenValidNullValueShouldReturnEntity\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: test/Test.php
+
+		-
+			message: "#^Method DummyEntity\\\\Test\\\\Test\\:\\:testGivenValidTypeValueShouldReturnEntity\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: test/Test.php
+
+		-
+			message: "#^Method DummyEntity\\\\Test\\\\Test\\:\\:testGivenValidValueShouldReturnValue\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: test/Test.php
+
+		-
+			message: "#^Method DummyEntity\\\\Test\\\\Test\\:\\:testParametersMismatchShouldThrowException\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: test/Test.php
+
